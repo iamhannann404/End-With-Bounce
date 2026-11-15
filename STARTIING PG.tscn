@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bhhenyhk81m84"]
+
+[ext_resource type="Script" uid="uid://djt8deu7psdfl" path="res://startiing_pg.gd" id="1_rccsv"]
+[ext_resource type="Texture2D" uid="uid://ceq6hep71j0hw" path="res://Pixel Adventure 1 (1)/Free/Background/Yellow.png" id="2_rccsv"]
+
+[sub_resource type="SystemFont" id="SystemFont_54vt4"]
+font_names = PackedStringArray("Aldhabi")
+font_weight = 700
+
+[sub_resource type="SystemFont" id="SystemFont_y1nom"]
+font_names = PackedStringArray("Aldhabi")
+font_italic = true
+
+[sub_resource type="SystemFont" id="SystemFont_b372i"]
+font_names = PackedStringArray("Arial Nova")
+font_italic = true
+font_weight = 625
+font_stretch = 200
+generate_mipmaps = true
+hinting = 2
+multichannel_signed_distance_field = true
+
+[node name="Control" type="Control" unique_id=1521046730]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_top = -3.0
+offset_right = -11.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rccsv")
+
+[node name="Yellow" type="Sprite2D" parent="." unique_id=22370457]
+position = Vector2(581.50006, 322)
+scale = Vector2(18.015625, 9.999999)
+texture = ExtResource("2_rccsv")
+
+[node name="play" type="Button" parent="." unique_id=453942459]
+modulate = Color(0.05, 0.05, 0.05, 1)
+layout_mode = 0
+offset_left = 486.0
+offset_top = 421.0
+offset_right = 634.0
+offset_bottom = 463.0
+theme_override_fonts/font = SubResource("SystemFont_54vt4")
+theme_override_font_sizes/font_size = 57
+text = "Play"
+
+[node name="quit" type="Button" parent="." unique_id=2091183613]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 501.0
+offset_right = 653.0
+offset_bottom = 561.0
+theme_override_colors/font_color = Color(0.03, 0.03, 0.03, 1)
+theme_override_fonts/font = SubResource("SystemFont_y1nom")
+theme_override_font_sizes/font_size = 54
+toggle_mode = true
+text = "Quit"
+
+[node name="Button" type="Button" parent="." unique_id=807413708]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.19100001
+anchor_bottom = 0.16700001
+offset_left = 394.0
+offset_top = 157.0
+offset_right = 492.968
+offset_bottom = 194.784
+theme_override_fonts/font = SubResource("SystemFont_b372i")
+theme_override_font_sizes/font_size = 39
+text = "Die With Bounce"
+flat = true
+
+[connection signal="pressed" from="play" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_button_2_pressed"]

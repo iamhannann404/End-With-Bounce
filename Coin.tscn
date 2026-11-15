@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d1wpk5kfdof6q"]
+
+[ext_resource type="Script" uid="uid://d3chlc1vkon3g" path="res://coin.gd" id="1_h5dih"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ou7jl"]
+load_path = "res://.godot/imported/gold_spin.png-b586e27c155f2d84b09ccfcab6197b13.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lglef"]
+radius = 12.649111
+
+[node name="Node2D" type="Node2D" unique_id=380993886]
+
+[node name="coin" type="Area2D" parent="." unique_id=589860488]
+script = ExtResource("1_h5dih")
+
+[node name="Sprite2D" type="Sprite2D" parent="coin" unique_id=87992087]
+position = Vector2(97.625, 34)
+scale = Vector2(1.7100003, 1.86)
+texture = SubResource("CompressedTexture2D_ou7jl")
+hframes = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coin" unique_id=552989349]
+position = Vector2(99, 36)
+shape = SubResource("CircleShape2D_lglef")
+
+[connection signal="body_entered" from="coin" to="coin" method="_on_body_entered"]
